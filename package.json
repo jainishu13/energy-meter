@@ -1,6 +1,7 @@
 {
   "name": "energy",
   "version": "0.0.0",
+  "author":"singhai.meesha@gmail.com",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
