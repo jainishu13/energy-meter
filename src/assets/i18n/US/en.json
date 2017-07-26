@@ -1,7 +1,7 @@
 {
   "login": {
-    "title": "Sign in to ng2-admin",
-    "signup_link": "New to ng2-admin? Sign up!",
+    "title": "Sign in to Smart Energy Meter",
+    "signup_link": "New to Smart Energy Meter? Sign up!",
     "email": "Email",
     "password": "Password",
     "sign_in": "Sign in",
@@ -12,7 +12,7 @@
     "share_on_google_plus": "Share on Google Plus"
   },
   "general": {
-    "akveo": "Akveo",
+    "akveo": "Ust Global",
     "home": "Home",
     "forms": {
       "option1": "Option 1"
@@ -54,7 +54,7 @@
     "created_with": "Created with"
   },
   "dashboard": {
-    "acquisition_channels": "Acquisition Channels",
+    "acquisition_channels": "Energy Consumption",
     "users_by_country": "Users by Country",
     "revenue": "Revenue",
     "feed": "Feed",
@@ -62,7 +62,7 @@
     "calendar": "Calendar",
     "new_visits": "New Visits",
     "purchases": "Purchases",
-    "active_users": "Active Users",
+    "active_users": "Total Users",
     "returned": "Returned",
     "popular_app": {
       "super_app": "Super App",

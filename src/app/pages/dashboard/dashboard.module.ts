@@ -6,6 +6,7 @@ import { NgaModule } from '../../theme/nga.module';
 
 import { Dashboard } from './dashboard.component';
 import { routing }       from './dashboard.routing';
+import { DashboardService } from './dashboard.service';
 
 import { PopularApp } from './popularApp';
 import { PieChart } from './pieChart';
@@ -49,7 +50,8 @@ import { UsersMapService } from './usersMap/usersMap.service';
     PieChartService,
     TodoService,
     TrafficChartService,
-    UsersMapService
+    UsersMapService,
+    DashboardService
   ]
 })
 export class DashboardModule {}

@@ -18,7 +18,7 @@ export const PAGES_MENU = [
         path: '',
         data: {
           menu: {
-            title: 'general.menu.menu_level_1',
+            title: 'India',
             icon: 'ion-ios-more',
             selected: false,
             expanded: false,
@@ -30,16 +30,7 @@ export const PAGES_MENU = [
             path: '',
             data: {
               menu: {
-                title: 'general.menu.menu_level_1_1',
-                url: '#'
-              }
-            }
-          },
-          {
-            path: '',
-            data: {
-              menu: {
-                title: 'general.menu.menu_level_1_2',
+                title: 'karnataka',
                 url: '#'
               }
             },
@@ -48,37 +39,26 @@ export const PAGES_MENU = [
                 path: '',
                 data: {
                   menu: {
-                    title: 'general.menu.menu_level_1_2_1',
+                    title: 'Bangalore',
                     url: '#'
                   }
-                }
+                },
+                children: [
+                  {
+                    path: '',
+                    data: {
+                      menu: {
+                        title: 'Whitefield',
+                        url: '#'
+                      }
+                    }
+                  }
+                ]
               }
             ]
           }
         ]
-      },       
-      {
-        path: 'charts',
-        data: {
-          menu: {
-            title: 'general.menu.charts',
-            icon: 'ion-stats-bars',
-            selected: false,
-            expanded: false,
-            order: 200,
-          }
-        },
-        children: [
-          {
-            path: 'chartist-js',
-            data: {
-              menu: {
-                title: 'general.menu.chartist_js',
-              }
-            }
-          }
-        ]
-      },     
+      }, 
       {
         path: 'maps',
         data: {
