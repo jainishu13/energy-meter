@@ -17,4 +17,16 @@ router.get('/', function(req, res) {
   });
 });
 
+/* Register users . */
+router.post('/register', function(req, res) {
+  console.log(req.body);
+  user.register(req,function(err,success){
+    if(err){
+
+    }else{
+      res.send({"user":success})
+    }
+  });
+});
+
 module.exports = router;
