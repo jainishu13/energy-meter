@@ -1,17 +1,16 @@
-var userModel = require('../model/device');
+var deviceModel = require('../model/device');
 
 var deviceService = {}
 
-deviceService.UserGet = function(req,res){
-    console.log("came to service");
-    console.log(res);
-    deviceModel.find({},function(err,success){
+deviceService.read = function(userId,res){
+    console.log("came to deviceService");
+    deviceModel.find({"userId":userId},function(err,success){
         if(err){
             console.log(`error is ${err}`);
         }
         else{
-        //console.log(`success is ${success}`);
-        res("","hey i am from mongodb");
+        console.log(`success is ${success}`);
+        res("",success);
         //response.render("hey i am from mongodb");
         }
     })

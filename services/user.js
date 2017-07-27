@@ -10,16 +10,25 @@ userService.UserGet = function(req,res){
             console.log(`error is ${err}`);
         }
         else{
-        //console.log(`success is ${success}`);
         res("",success);
-        //response.render("hey i am from mongodb");
         }
     })
 }
 
 userService.register = function(req,res){
-    let newUser = userModel({username:req.body.username,email:req.body.email,password:req.body.password.password});
+    let newUser = userModel({username:req.body.name,email:req.body.email,password:req.body.passwords.password});
     newUser.save(function(err,success){
+        if(err){
+            console.log(`error is ${err}`);
+        }
+        else{
+        res("",success);
+        }
+    })
+}
+
+userService.login = function(req,res){
+    userModel.find({"email":req.body.email,"password":req.body.password},function(err,success){
         if(err){
             console.log(`error is ${err}`);
         }

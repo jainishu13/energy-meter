@@ -24,7 +24,19 @@ router.post('/register', function(req, res) {
     if(err){
 
     }else{
-      res.send({"user":success})
+      res.send(success);
+    }
+  });
+});
+
+/* login users . */
+router.post('/login', function(req, res) {
+  console.log(req.body);
+  user.login(req,function(err,success){
+    if(err){
+
+    }else{
+      res.send(success);
     }
   });
 });

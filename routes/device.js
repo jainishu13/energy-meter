@@ -3,16 +3,14 @@ var router = express.Router();
 
 var device = require('../services/device');
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  console.log("came to route");
-  device.UserGet(req,function(err,success){
+/* GET device listing. */
+router.get('/:userId', function(req, res) {
+  let userId = req.params.userId;
+  device.read(userId,function(err,success){
     if(err){
-
+      console.log("error in fetching device");
     }else{
-      //res.render('index', { title: success });
-      //res.json({"mongo":success});
-      res.send({"mongdb":success})
+      res.send(success);
     }
   });
 });

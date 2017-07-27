@@ -1,15 +1,20 @@
 var mongoose = require('mongoose');
 
 var deviceSchema = mongoose.Schema({
-    'appliance_name':String,
-    'operating_freq':String,
-    'type':String,
-    'model':String,
-    'purchase_date':String,
-    'avg_lifetime':String,
-    'loc_id':String,
-    'remarks':String,
-    'power':String
+    "userId":{type:String},
+    "device":[
+        {
+            'appliance_name':{type:String},
+            'operating_freq':{type:String},
+            'type':{type:String},
+            'model':{type:String},
+            'purchase_date':{type:Date},
+            'avg_lifetime':{type:String},
+            'location':[],
+            'remarks':{type:String},
+            'power':{type:String}
+        }
+    ]
 })
 
 module.exports = mongoose.model('device',deviceSchema);
