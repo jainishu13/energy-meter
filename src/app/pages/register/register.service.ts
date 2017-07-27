@@ -8,7 +8,7 @@ export class RegisterService {
   }
 
   register(body){
-   return this._http.post('',body)
+   return this._http.post('http://localhost:3000/users/register',body)
           .map(res => res.json());
 
   }

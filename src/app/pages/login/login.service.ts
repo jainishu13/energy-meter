@@ -8,7 +8,7 @@ export class LoginService {
   }
   
   login(body){
-   return this._http.post('',body)
+   return this._http.post('http://localhost:3000/users/login',body)
           .map(res => res.json());
 
   }

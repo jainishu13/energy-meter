@@ -7,6 +7,8 @@ export class GlobalState {
   private _data = new Subject<Object>();
   private _dataStream$ = this._data.asObservable();
 
+  private user = {};
+
   private _subscriptions: Map<string, Array<Function>> = new Map<string, Array<Function>>();
 
   constructor() {
@@ -40,4 +42,13 @@ export class GlobalState {
       callback.call(null, data['data']);
     });
   }
+  
+  storeUser(user){
+    this.user = user;
+  }
+
+  getUser(){
+    return this.user;
+  }
+
 }

@@ -49,7 +49,7 @@ export class Register {
         this._router.navigateByUrl('/pages/dashboard');
       },err =>{
         console.log(err);
-        this._router.navigateByUrl('/pages/dashboard');
+        alert("Error in Registration");
       });
     }
   }

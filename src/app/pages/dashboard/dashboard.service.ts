@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-
+import {Http} from '@angular/http';
 
 @Injectable()
 export class DashboardService {
@@ -123,7 +123,7 @@ export class DashboardService {
       }
     },
     simplePieData: {
-      series: [12, 3, 4, 2, 6]
+      series: [12, 3, 4, 2.5, 6]
     },
     simplePieOptions: {
       fullWidth: true,
@@ -162,7 +162,7 @@ export class DashboardService {
     }
   };
 
-  constructor() {
+  constructor(private _http:Http) {
   }
 
   public getAll() {
@@ -196,4 +196,11 @@ export class DashboardService {
       }]
     ];
   }
+  
+  deviceInfo(userId){
+    return this._http.get(`http://localhost:3000/device/${userId}`)
+        .map(res => res.json());
+    
+  }
+
 }
