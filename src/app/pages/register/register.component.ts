@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
+import { RegisterService } from './register.service';
+import {Router} from '@angular/router';
+import {GlobalState} from 'app/global.state';
 
 @Component({
   selector: 'register',
@@ -18,7 +21,7 @@ export class Register {
 
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
+  constructor(fb:FormBuilder,private _registerService: RegisterService,private _router:Router,private _global:GlobalState) {
 
     this.form = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -40,7 +43,16 @@ export class Register {
     this.submitted = true;
     if (this.form.valid) {
       // your code goes here
-      // console.log(values);
+      console.log(values);
+      this._registerService.register(values)
+      .subscribe(data =>{
+        console.log(data);
+        this._global.storeUser(data);
+        this._router.navigateByUrl('/pages/dashboard');
+      },err =>{
+        console.log(err);
+        alert("Error in Registration");
+      });
     }
   }
 }
